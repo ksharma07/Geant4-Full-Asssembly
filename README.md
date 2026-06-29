@@ -54,3 +54,5 @@ make -j4
 ./neutron_collimator           # interactive; uses gui macros
 ./neutron_collimator run.mac    # batch macro containing /run/beamOn N
 ```
+## Author
+Kartikeya Sharma: ksharma2@triumf.ca || sharmakartikeya02@gmail.com

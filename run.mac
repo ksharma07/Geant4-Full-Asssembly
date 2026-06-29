@@ -1,0 +1,13 @@
+/control/verbose 0
+/run/verbose 0
+/event/verbose 0
+/tracking/verbose 0
+/process/verbose 0
+/run/printProgress 10000
+
+/run/numberOfThreads 1
+#/detector/L1Thickness 2.0
+#/detector/L4Thickness 2.0
+/run/initialize
+/run/beamOn 1000000
+

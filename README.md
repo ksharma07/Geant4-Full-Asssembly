@@ -41,12 +41,6 @@ RunAction::EndOfRunAction          ↓ write/close ntuples; tree → runoutput.r
 - Per-step actions: [src/SteppingAction.cc](src/SteppingAction.cc) / [include/SteppingAction.hh](include/SteppingAction.hh)
   - Runs each step; detects volume/particle, accumulates energy/time/position into `EventAction` vectors/counters, sets first-hit metadata, updates kill counters.
 
-## Outputs
-- `output<runID>.root`: G4AnalysisManager ntuples from `RunAction` (IDs 0–4).
-- `eventoutput.root`: Manual per-event `Events` tree from `EventAction`.
-- `runoutput.root`: Manual `tree` with `totalEvents` from `RunAction` destructor.
-- Optional analysis macro: [rootanalysis/evtreehisto.C](rootanalysis/evtreehisto.C) reads `eventoutput*.root` and produces histograms into `hist.root`.
-
 ## Typical run
 ```
 # from build directory after cmake config
@@ -54,5 +48,11 @@ make -j4
 ./neutron_collimator           # interactive; uses gui macros
 ./neutron_collimator run.mac    # batch macro containing /run/beamOn N
 ```
+## Outputs
+- `output<runID>.root`: G4AnalysisManager ntuples from `RunAction` (IDs 0–4).
+- `eventoutput.root`: Manual per-event `Events` tree from `EventAction`.
+- `runoutput.root`: Manual `tree` with `totalEvents` from `RunAction` destructor.
+- Optional analysis macro: [rootanalysis/evtreehisto.C](rootanalysis/evtreehisto.C) reads `eventoutput*.root` and produces histograms into `hist.root`. Requires TCut .cuts file for further refinment.
+
 ## Author
 Kartikeya Sharma: ksharma2@triumf.ca || sharmakartikeya02@gmail.com
